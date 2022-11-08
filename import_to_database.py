@@ -12,15 +12,6 @@ def deal_with_mileage(mileage: str):
     else:
         return float(actual[0]) * 10000
 
-def deal_with_mileage(mileage: str):
-    mileage = mileage.split("公里")[0]
-    actual = mileage.split("万")
-    if len(actual) == 1:
-        return float(actual[0])
-    else:
-        return float(actual[0]) * 10000
-
-
 def append_value_insert_sql(each_details):
     car_title = each_details[0]  # 标题
     if car_title == "":
@@ -64,7 +55,7 @@ prefix_sql = """INSERT INTO car_details_v2(car_title, car_price, new_car_price, 
                 color, total_motor_power, battery_capacity, battery_type,energy_type,displace,key_num)
                 VALUES """
 
-reader = xlrd.open_workbook("/UsedCarPricing/data/car_all.xls")
+reader = xlrd.open_workbook("./data/car_all.xls")
 table = reader.sheets()[0]
 
 car_details_list = []
