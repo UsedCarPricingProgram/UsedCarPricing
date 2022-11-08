@@ -8,7 +8,6 @@ from tqdm import tqdm
 from get_token import get_verify_token
 
 
-
 #首页买车获取所有的品牌
 def get_all_brand():
     """
