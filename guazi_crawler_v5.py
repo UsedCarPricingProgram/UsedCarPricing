@@ -8,7 +8,6 @@ from tqdm import tqdm
 from get_token import get_verify_token
 
 
-
 #首页买车获取所有的品牌
 def get_all_brand():
     """
@@ -325,7 +324,7 @@ def get_car_more_details(clueId) -> ():
 
 
 if __name__ == '__main__':
-    file_name = "clue_id.xls"
+    file_name = "data/clue_id_all.xls"
 
     # read clue_id
     reader = xlrd.open_workbook(file_name)

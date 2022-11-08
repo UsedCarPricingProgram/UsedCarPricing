@@ -64,7 +64,7 @@ prefix_sql = """INSERT INTO car_details_v2(car_title, car_price, new_car_price, 
                 color, total_motor_power, battery_capacity, battery_type,energy_type,displace,key_num)
                 VALUES """
 
-reader = xlrd.open_workbook("/Users/apple/Desktop/progrmming_project/UsedCarPricing/data/guazi_all.xls")
+reader = xlrd.open_workbook("/UsedCarPricing/data/car_all.xls")
 table = reader.sheets()[0]
 
 car_details_list = []
