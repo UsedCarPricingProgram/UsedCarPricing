@@ -201,6 +201,9 @@ def get_car_details_by_clueid(clueId) -> ():
             response = session.get(url=f'https://mapi.guazi.com/car-source/carDetail/detail?{query_string}',
                                    headers=headers, timeout=10, proxies={})
             res = response.text
+
+            if "security_intercept" in res:
+                input("请完成验证码后再继续")
             if response.status_code != 200:
                 the_number_of_failure += 1  # 请求返回码不为200, 该请求失败直接跳过后面的内容解析, 进行重试
                 pass
@@ -297,6 +300,8 @@ def get_car_more_details(clueId) -> ():
             response = session.get(url=f'https://mapi.guazi.com/car-source/carRecord/carInfo?{query_string}',
                                    headers=headers, timeout=10, proxies={})
             res = response.text
+            if "security_intercept" in res:
+                input("请完成验证码后再继续")
             if response.status_code != 200:
                 the_number_of_failure += 1  # 请求返回码不为200, 该请求失败直接跳过后面的内容解析, 进行重试
                 pass
