@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 import os
 
 '''
@@ -11,7 +12,7 @@ import os
 '''
 
 # raw_data是从原表读到的原始数据
-raw_data = pd.read_excel(os.path.join(os.getcwd(),'data/car_all.xls'))
+raw_data = pd.read_excel(os.path.join(os.getcwd(), 'data/rawdata/car_all_beijing.xls'))
 raw_data = raw_data.rename(columns={
     '标题':'title',
     '价格':'price',
@@ -63,4 +64,4 @@ clean_data['energy_type'] = clean_data['energy_type'].map(energy_type_num)
 clean_data['gearbox'] = clean_data['gearbox'].apply(lambda x : 1 if str(x)=='自动' else 0)
 
 # 写入新文件
-clean_data.to_excel(os.path.join(os.getcwd(),'data/cleaned_car_all.xlsx'),encoding='utf-8')
+clean_data.to_excel(os.path.join(os.getcwd(),'data/cleaned_car_all_beijing.xlsx'),encoding='utf-8')
