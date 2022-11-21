@@ -329,7 +329,7 @@ def get_car_more_details(clueId) -> ():
 
 
 if __name__ == '__main__':
-    file_name = "/Users/apple/Desktop/progrmming_project/UsedCarPricing/data/clue_id_shanghai.xls"
+    file_name = "/UsedCarPricing/data/clueid/clue_id_shanghai.xls"
 
     # read clue_id
     reader = xlrd.open_workbook(file_name)
