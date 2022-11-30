@@ -1,8 +1,8 @@
-
 from tqdm import tqdm
 import pymysql
 import xlrd
 from xlrd import xldate_as_datetime
+
 
 def append_value_insert_sql(each_details, sheet):
     value = None
@@ -10,15 +10,15 @@ def append_value_insert_sql(each_details, sheet):
         value = f"( {each_details[0]}, '{each_details[1]}', {each_details[2]}, {each_details[3]}, " \
                 f"'{xldate_as_datetime(each_details[4], 0)}', {each_details[5]}, '{each_details[6]}', " \
                 f"{each_details[7]}, {each_details[8]}, {each_details[9]}, {each_details[10]}, {each_details[11]}, " \
-                f"{each_details[12]}, {each_details[13]}, '{each_details[14]}', {each_details[15]}, {each_details[16]}, " \
-                f"{each_details[17]}, {each_details[18]}, {each_details[19]}, {each_details[20]}), "
+                f"{each_details[12]}, {each_details[13]}, '{each_details[14]}', {each_details[15]}, " \
+                f"{each_details[16]}, {each_details[17]}, {each_details[18]}, {each_details[19]}, {each_details[20]}), "
     if sheet == 1:
         value = f"( {each_details[0]}, '{each_details[1]}', {each_details[2]}, {each_details[3]}, " \
                 f"'{xldate_as_datetime(each_details[4], 0)}', {each_details[5]}, {each_details[6]}, " \
                 f"'{each_details[7]}', {each_details[8]}, {each_details[9]}, {each_details[10]}, {each_details[11]}, " \
-                f"{each_details[12]}, {each_details[13]}, '{each_details[14]}', {each_details[15]}, {each_details[16]}, " \
-                f"'{each_details[17]}', {each_details[18]}, {each_details[19]}, {each_details[20]}, " \
-                f"{each_details[21]}, {each_details[22]}, {each_details[23]}), "
+                f"{each_details[12]}, {each_details[13]}, '{each_details[14]}', {each_details[15]}, " \
+                f"{each_details[16]}, '{each_details[17]}', {each_details[18]}, {each_details[19]}, " \
+                f"{each_details[20]}, {each_details[21]}, {each_details[22]}, {each_details[23]}), "
     if sheet == 2:
         battery_type = ("'" + each_details[14] + "'") if each_details[14] != "" else "null"
         value = f"( {each_details[0]}, '{each_details[1]}', {each_details[2]}, {each_details[3]}, " \
@@ -39,7 +39,6 @@ db = pymysql.connect(host='gz-cynosdbmysql-grp-52kxr8wn.sql.tencentcdb.com',
 cursor = db.cursor()
 
 prefix_sql = "INSERT INTO %s VALUES "
-
 
 reader = xlrd.open_workbook("cleaned_car_all.xlsx")
 sheet = ["petrol", "electric", "mixed"]
@@ -69,7 +68,7 @@ for sql in tqdm(sql_list):
         db.commit()
     except Exception as e:
         print(e)
-        # 如果发生错误则回滚
+        # 如果发生错误则回滚 并结束
         db.rollback()
         db.close()
         exit()
