@@ -8,10 +8,13 @@ CUHKSZ-IBA6104-Group1-UsedCarPricingProgram
 | 文件名                      | 作用                                                         |
 | --------------------------- | ------------------------------------------------------------ |
 | 二手车-特征释义表.xlsx      | 规定数据表结构：列及其释义                                   |
-| guazi_crawler_vX.py         | 爬虫程序                                                     |
-| get_token.py                | 辅助爬虫程序的反爬代码                                       |
-| guazi_data_preprocessing.py | 数据预处理。对爬虫得到的原始数据guazi_all.xls进行清洗，写入新文件cleaned_car_all.xlsx |
-| data目录                    | 存放项目使用或产生的所有数据集                               |
+| DataPreprocessing目录        | 数据清洗所有程序                                                   |
+| Webscraping目录    	       | 爬虫及其反爬程序                                                 |
+| EDA目录          		       | eda所有代码                                    |
+| data目录                            | 存放项目使用或产生的所有数据集                               |
+| FeatureEngineering目录                            | 特征工程 		                              |
+| Model目录                            | 模型所有代码	                				              |
+
 
 
 
