@@ -1,15 +1,27 @@
 # UsedCarPricing
+
 CUHKSZ-IBA6104-Group1-UsedCarPricingProgram
 
-文件目录结构解释：
+website: 
 
-| 文件名                    | 作用                                                       |
-|------------------------| ---------------------------------------------------------- |
-| 二手车-特征释义表.xlsx         | 规定数据表结构：列及其释义                                   |
-| DataPreprocessing目录    | 数据清洗所有程序                                                 |
-| Webscraping目录    	     | 爬虫及其反爬程序                                                 |
-| EDA目录          		      | eda所有代码                                    |
-| data目录                 | 存放项目使用或产生的所有数据集                               |
-| FeatureEngineering目录   | 特征工程 		                              |
-| Model目录                | 模型所有代码	                				              |
-|
+https://www.guazi.com/buy
+
+https://m.guazi.com/
+
+Explanation of file directory structure:
+
+| File name              | Explanation                                                                                                                                                                                                                                      |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 二手车-特征释义表.xlsx | Specifying the Data Table Structure: features and their Interpretations                                                                                                                                                                         |
+| DataPreprocessing      | Data Cleaning and preprocessing                                                                                                                                                                                                                  |
+| Webscraping            | - export_clue.py：export the clue id<br />- get_token.py: get verify token<br />- guazi_crawler_v5_xxx.py: web scraping code<br />- import_to_database: import the cleaned_car_all.xlsx to database<br />- read_from_database: connect to mysql |
+| EDA                    | Exploratory data analysis                                                                                                                                                                                                                        |
+| data                   | Store all datasets used or produced by the project                                                                                                                                                                                               |
+| FeatureEngineering     | Feature Engineering                                                                                                                                                                                                                              |
+| Model                  | All code related to models                                                                                                                                                                                                                       |
+
+| Data File  | Explanation                                                                    |
+| ----------- | ------------------------------------------------------------------------------ |
+| cleaneddata | cleaned data after data cleaning and merge to a dataframe cleaned_car_all.xlsx |
+| clueid      | clueid of beijing、shanghai、shenzhen                                          |
+| rawdata     | raw data of beijing、shanghai、shenzhen after web crawling                     |

@@ -11,8 +11,6 @@ clue_id_by_brand_list = []
 
 GET_CLUE_ID_MODE = "NEW"  # 获取clue_id的三种模式
 FILE_NAME = "clue_id.xls"
-# 1: NEW 直接重新获取所有的clue_id, 然后储存在新的文件内
-# 2: APPEND 增量模式: 重新再爬取一遍所有的clue_id, 然后添加新的进结果表
 
 for brand_name, value in brand_list:
     clue_id_by_brand_list.extend(get_all_clue_id(value))  # 将所有车辆的clue_id存在里头
