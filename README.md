@@ -45,7 +45,7 @@ Please see the file : '二手车-特征释义表.xlsx'
 
 ## Division of labor
 
-![Division of labor](/Division of labor.png)
+![Division of labor](https://github.com/UsedCarPricingProgram/UsedCarPricing/Division of labor.png)
 
 
 
