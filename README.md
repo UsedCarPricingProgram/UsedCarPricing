@@ -1,3 +1,7 @@
+---
+typora-root-url: ./
+---
+
 # UsedCarPricing
 
 CUHKSZ-IBA6104-Group1-UsedCarPricingProgram
@@ -41,7 +45,7 @@ Please see the file : '二手车-特征释义表.xlsx'
 
 ## Division of labor
 
-![Division of labor](Division of labor.png)
+![Division of labor](/Division of labor.png)
 
 
 
